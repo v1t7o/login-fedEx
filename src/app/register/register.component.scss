@@ -1,0 +1,17 @@
+.example-container{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 50%;
+  margin: 20px auto;
+  &__form{
+    display: flex;
+    flex-direction: column;
+    & mat-form-field{
+      margin-top: 20px;
+    }
+    :last-child{
+      margin-bottom: 25px;
+    }
+  }
+}
