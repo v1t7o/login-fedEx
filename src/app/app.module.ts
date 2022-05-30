@@ -10,12 +10,20 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import {MatCardModule} from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
+import { NavBarComponent } from './shared/nav-bar.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import { SuccessComponent } from './shared/success/success.component';
+import {MatButtonModule} from '@angular/material/button';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent
+    RegisterComponent,
+    NavBarComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +33,10 @@ import { HttpClientModule } from '@angular/common/http';
     MatFormFieldModule,
     MatCardModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule
   ],
   exports: [
     FormsModule

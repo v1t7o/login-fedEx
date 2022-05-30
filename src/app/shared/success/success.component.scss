@@ -1,0 +1,10 @@
+.success-card{
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(3, 192, 3, 0.192);
+  & h1{
+    font-size: large;
+    font-weight: bold;
+    margin: auto;
+  }
+}

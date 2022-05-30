@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import {  CustomValidators } from '../custom-validator-pasword';
 import { LoginService } from '../login.service';
-import { userDto } from '../models/user-dto/user-dto.component';
+import { userDto } from '../models/user-dto.component';
 
 
 @Component({
@@ -12,17 +12,10 @@ import { userDto } from '../models/user-dto/user-dto.component';
 })
 export class RegisterComponent implements OnInit {
   public singUpForm: FormGroup;
-  /* public singUpForm = new FormGroup({
-    firstName: new FormControl('',Validators.required),
-    lastName: new FormControl('', Validators.required),
-    mail: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl((''),[Validators.required, Validators.minLength(8)]),
-    confirmPasword: new FormControl('', Validators.required,),
-  }); */
+
   public submitted = false;
   public success = '';
-  /* public email = new FormControl();
-  public firstName = new FormControl() */
+
   constructor(private fb: FormBuilder, private loginService: LoginService) {
     this.singUpForm = this.createForm();
   }
@@ -83,6 +76,7 @@ export class RegisterComponent implements OnInit {
     user.lastName = this.singUpForm.controls['lastName'].value;
     user.email = this.singUpForm.controls['mail'].value;
     this.loginService.sendUser(user).subscribe(data => console.log(data))
+    this.submitted = true;
     console.log(this.singUpForm.value)
   }
 }
